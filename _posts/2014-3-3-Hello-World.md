@@ -1,10 +1,15 @@
 ---
 layout: post
-title: You're up and running!
+title: TeamViewer in console (CLI), without GUI
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+I just figured out that is possible to use TeamViewer without GUI, in pure console mode. Sometimes that may be helpfull if you need to get easy access to a remote server, that is located behind NAT. 
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
+```$ cd ~/Downloads/
+$ wget https://download.teamviewer.com/download/linux/teamviewer_i386.deb
+$ sudo dpkg -i teamviewer_i386.deb
+$ teamviewer help                            # list of commands, but not all of them, I don't know why
+$ teamviewer info                            # check TV daemon status and get TV ID
+$ sudo teamviewer passwd [password]          # set new password```
 
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+If u want save space u can also install `TeamViewer Host`.
